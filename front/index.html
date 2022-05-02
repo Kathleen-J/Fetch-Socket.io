@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>XML</title>
+</head>
+
+<body>
+
+  <div>
+    <p>Welcome!</p><br><br><br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At sunt eos, explicabo, eaque quia esse reprehenderit inventore labore fuga, perspiciatis voluptatibus facilis tempore officia. Possimus sapiente aut laudantium minus, eveniet?</p>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script>
+    var socket = io();
+    socket.on('message', (data) => {
+
+      //check in browser console
+      console.log(data);
+
+      //add new tag with new information (from backend)
+      var content = document.createElement('p');
+      content.innerHTML = data;
+      document.body.append(content);
+
+      //перезапишет весь html на значение (data)
+      // document.write(data);
+    });
+  </script>
+
+</body>
+
+</html>
