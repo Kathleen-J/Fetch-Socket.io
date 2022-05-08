@@ -11,28 +11,14 @@
 <body>
 
   <div>
-    <p>Welcome!</p><br><br><br>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At sunt eos, explicabo, eaque quia esse reprehenderit inventore labore fuga, perspiciatis voluptatibus facilis tempore officia. Possimus sapiente aut laudantium minus, eveniet?</p>
+    <h1>Welcome!</h1><br>
+    <h3 id="users" style="font-weight: bold; color: rgb(93, 224, 181);"></h3><br>
   </div>
 
+  <div id="weather"></div>
+
   <script src="/socket.io/socket.io.js"></script>
-
-  <script>
-    var socket = io();
-    socket.on('message', (data) => {
-
-      //check in browser console
-      console.log(data);
-
-      //add new tag with new information (from backend)
-      var content = document.createElement('p');
-      content.innerHTML = data;
-      document.body.append(content);
-
-      //перезапишет весь html на значение (data)
-      // document.write(data);
-    });
-  </script>
+  <script src="/main.js"></script>
 
 </body>
 
